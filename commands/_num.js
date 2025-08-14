@@ -39,7 +39,10 @@ var data = JSON.parse(response);
 
 // ✅ Check if "No records found" is in any of the data (stringify check)
 if (JSON.stringify(data).includes("No records found")) {
-  Bot.sendMessage("❌ No record found.");
+  Bot.sendInlineKeyboard(
+    [{ title: "🔄 Next Number", command: "/getnum" }],
+    "❌ No record found."
+  );
   return;
 }
 
@@ -76,4 +79,10 @@ if (JSON.stringify(data).includes("mobile")) {
 } else {
   Bot.sendMessage("⚠️ No mobile data found in response.");
 }
+
+// ✅ Show "Next Number" button
+Bot.sendInlineKeyboard(
+  [{ title: "🔄 Next Number", command: "/getnum" }],
+  "✅ Search completed. Click below to search again."
+);
 

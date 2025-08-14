@@ -13,4 +13,8 @@
   group: 
 CMD*/
 
-HTTP.get({url: "https://checker-ig.indiansmmprovider.co.in/proxy.php?num="+message+"", success: "/num"})
+Bot.sendInlineKeyboard(
+  [{ title: "📱 Enter Number", command: "/getnum" }],
+  "👋 Welcome! This bot fetches mobile number details.\n\nClick below to begin."
+);
+
